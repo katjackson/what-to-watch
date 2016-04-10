@@ -29,7 +29,7 @@ def get_highest_rated_movies(movie_id_list, ratings_by_id, movie_object_list):
     # print([len(ratings_by_id[key]) for key in ratings_by_id if key in movie_id_list])
     movie_names_in_order = [Movie.get_name(tuple_thing[0], movie_object_list) for tuple_thing in movie_ids_by_avg_rating if tuple_thing[0] in movie_id_list]
 
-    return movie_names_in_order[:10]
+    return movie_names_in_order[:20]
 
 
 def make_userless_list(user_id, all_rating_data, all_movie_data):
@@ -121,13 +121,4 @@ def get_recommendations_for_user(user_id, ratings_by_user=ratings_by_user, ratin
 
     return get_best_movies_for_user(user_id, rating_data, movie_data, like_user_ratings_by_id)
 
-print(get_recommendations_for_user(196))
-
-
-
-
-# def main():
-#
-#
-# if __name__ == '__main__':
-#     main()
+# print(get_recommendations_for_user(196))

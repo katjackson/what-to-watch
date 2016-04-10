@@ -56,10 +56,3 @@ class Rating():
     def get_average_rating(movie_id, ratings_by_id_dict):
         average = sum(ratings_by_id_dict[movie_id]) / len(ratings_by_id_dict[movie_id])
         return round(average, 2)
-
-
-    # @staticmethod
-    # def get_average_rating(movie_id, list_of_rating_objects):
-    #     list_of_ratings = Rating.get_movie_ratings(movie_id, list_of_rating_objects)
-    #     average = sum(list_of_ratings) / len(list_of_ratings)
-    #     return round(average, 2)
