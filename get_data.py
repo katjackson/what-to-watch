@@ -2,23 +2,32 @@ import csv
 from movie_lib import Movie, Rating, User
 
 all_rating_data = []
+ratings_by_id = {}
+ratings_by_user = {}
 
 with open('u.data', encoding='latin_1') as ratings_file:
     reader = csv.reader(ratings_file, delimiter='\t')
     for row in reader:
         rating = Rating(row)
         all_rating_data.append(rating)
+        try:
+            ratings_by_id[rating.movie_id].append(rating.rating)
+        except:
+            ratings_by_id[rating.movie_id] = [rating.rating]
+
+        try:
+            ratings_by_user[rating.user_id].append((rating.movie_id, rating.rating))
+        except:
+            ratings_by_user[rating.user_id] = [(rating.movie_id, rating.rating)]
 
 
 all_movie_data = []
-dict_of_ratings = {}
 
 with open('u.item', encoding='latin_1') as movie_file:
     reader = csv.reader(movie_file, delimiter='|')
     for row in reader:
         movie = Movie(row)
         all_movie_data.append(movie)
-        dict_of_ratings[movie.movie_id] = movie.get_movie_ratings_from_object(all_rating_data)
 
 # print(Movie.get_name(242, all_movie_data))
 # print(all_movie_data[:10])

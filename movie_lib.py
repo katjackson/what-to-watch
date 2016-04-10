@@ -8,7 +8,6 @@ class Movie():
         self.release = movie_data[2]
         self.imdb = movie_data[4]
         self.genre_code = movie_data[5:]
-        # self.ratings = get_movie_ratings_from_object()
 
     @staticmethod
     def get_name(movie_id, list_of_movie_objects):
@@ -20,7 +19,6 @@ class Movie():
         return [rating_object.rating for rating_object in rating_data if rating_object.movie_id == self.movie_id]
 
 
-
 class User():
 
     def __init__(self, user_data):
@@ -28,7 +26,6 @@ class User():
         self.age = int(user_data[1])
         self.binary_gender_identity = user_data[2]
         self.occupation = user_data[3]
-
 
 
 
@@ -56,7 +53,13 @@ class Rating():
         return list_of_movie_ids_and_ratings
 
     @staticmethod
-    def get_average_rating(movie_id, list_of_rating_objects):
-        list_of_ratings = Rating.get_movie_ratings(movie_id, list_of_rating_objects)
-        average = sum(list_of_ratings) / len(list_of_ratings)
+    def get_average_rating(movie_id, ratings_by_id_dict):
+        average = sum(ratings_by_id_dict[movie_id]) / len(ratings_by_id_dict[movie_id])
         return round(average, 2)
+
+
+    # @staticmethod
+    # def get_average_rating(movie_id, list_of_rating_objects):
+    #     list_of_ratings = Rating.get_movie_ratings(movie_id, list_of_rating_objects)
+    #     average = sum(list_of_ratings) / len(list_of_ratings)
+    #     return round(average, 2)
