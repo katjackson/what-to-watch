@@ -113,7 +113,7 @@ def get_ratings_from_like_users(like_users, ratings_by_user, ratings_by_id):
     dict_of_ratings_by_id = {}
     for movie in ratings_by_id:
         for rating_tuple in like_user_rating_tuples:
-            if movie == rating_tuple[0]:
+            if movie == rating_tuple[0]:  
                 try:
                     dict_of_ratings_by_id[movie].append(rating_tuple[1])
                 except:

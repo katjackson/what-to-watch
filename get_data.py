@@ -9,7 +9,7 @@ with open('u.data', encoding='latin_1') as ratings_file:
     reader = csv.reader(ratings_file, delimiter='\t')
     for row in reader:
         rating = Rating(row)
-        all_rating_data.append(rating)
+        all_rating_data.append(rating) 
         try:
             ratings_by_id[rating.movie_id].append(rating.rating)
         except:

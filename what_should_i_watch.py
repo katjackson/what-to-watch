@@ -4,7 +4,7 @@ from movie_lib import *
 from get_data import all_movie_data, all_user_data, all_rating_data, ratings_by_id, ratings_by_user
 from recommender import *
 
-# significantly_rated_movie_ids = get_significantly_rated_movie_ids(5, ratings_by_id)
+significantly_rated_movie_ids = get_significantly_rated_movie_ids(5, ratings_by_id)
 
 def clear():
     return os.system('clear')
