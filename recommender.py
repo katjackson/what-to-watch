@@ -41,6 +41,7 @@ def make_userless_list(user_id, all_rating_data, all_movie_data):
 
 
 def get_best_movies_for_user(user_id, rating_data, movie_data, ratings_by_id):
+    # returns a list of the highest rated movies that user has not rated
     userless_ids = make_userless_list(user_id, rating_data, movie_data)
 
     userless_ids = [movie_id for movie_id in userless_ids if movie_id in (get_significantly_rated_movie_ids(5, ratings_by_id))]
