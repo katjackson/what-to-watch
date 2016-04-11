@@ -28,7 +28,6 @@ class User():
         self.occupation = user_data[3]
 
 
-
 class Rating():
 
     def __init__(self, rating_data):
@@ -37,10 +36,7 @@ class Rating():
         self.rating = int(rating_data[2])
 
     def __str__(self):
-        return "{} | {} | {}".format(self.user_id, self.movie_id, self.rating)
-
-    def list(self):
-        return [self.user_id, self.movie_id, self.rating]
+        return "{}, {}, {}".format(self.user_id, self.movie_id, self.rating)
 
     @staticmethod
     def get_movie_ratings(movie_id, list_of_rating_objects):
