@@ -93,7 +93,7 @@ def test_get_matched_ratings_for_2_users():
 
 def test_find_like_users():
     like_users = find_like_users(55, ratings_by_user, all_user_data)
-    assert (find_euclidean_distance_of_taste(55, like_users[0], ratings_by_user) > 0.5)
+    assert (find_euc_dist_of_taste(55, like_users[0], ratings_by_user) > 0.5)
 
 def test_get_ratings_from_like_users():
     dict_by_id = get_ratings_from_like_users([196, 186], ratings_by_user, ratings_by_id)
