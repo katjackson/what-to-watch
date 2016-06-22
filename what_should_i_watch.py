@@ -35,7 +35,7 @@ def main():
 
     clear()
     print('\n')
-    print('WHAT FUCKING MOVIE SHOULD I WATCH?'.center(80, '-'))
+    print('WHAT FREAKING MOVIE SHOULD I WATCH?'.center(80, '-'))
     print('\n')
 
     user_id = 0
